@@ -1,0 +1,132 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    .fimg
+    {
+    min-height:400px;
+    max-height:400px;
+    width:100%
+    }
+
+
+
+
+
+
+
+</style>
+<div class="row bg-#f3f4f5 ">
+    <div class="row  pt-2 text-center">
+        <div class="col-sm-2 "></div>
+        <div class="col-sm-8 ">
+            <h3 class="sectionTitle">Your Valuable <span class="themeText">Feedback</span></h3>
+            <p class="sectionContent">
+                We appriciate to your valuable feedback and we are always focused on it.
+            </p>
+        </div>
+        <div class="col-sm-2 "></div>
+    </div>
+    <div class="row p-2">
+        <div class="col-sm-2 "></div>
+        <div class="col-sm-8 ">
+            <div class="row ">
+                <div class="col-sm-6 border p-5  ">
+                    <img class="fimg" src="{% static 'images/feed2.jpg' %}">
+                </div>
+                <div class="col-sm-6 border  p-5">
+                    <h4 class="divHeading">Add Your Feedback </h4>
+                    <form class="form" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label class="mb-0 mt-3">Your Name :</label>
+                                <input type="text" name="name" class="form-control " placeholder="Enter Your Name*"
+                                       required=""
+                                       title="Enter your name (Only valid name acceptable.)">
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="mb-0 mt-3">Your Mobile No. :</label>
+                                <input type="text" name="mobile" class="form-control"
+                                       placeholder="Enter Your Mobile No.*"
+                                       required="" title="Enter Your Mobile No.*">
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="mb-0 mt-3">Your Email :</label>
+                                <input type="text" name="email" class="form-control " placeholder="Enter Your Email*"
+                                       required="" title="Enter your mobile no">
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="mb-0 mt-3">Your Feedback :</label>
+                                <textarea class="form-control textarea" rows="4" name="msg"
+                                          placeholder="Your valuable feedback*" required=""></textarea>
+                            </div>
+                            <div class="col-sm-12 mt-3">
+                                <input type="submit" class="divBtn" value="SEND FEEDBACK">
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <!--<style>
+        .signup
+        {
+        min-height:500px;
+        max-width:400px;
+        font-size:14px;
+        margin: auto;
+        }
+        .form-control
+        {
+        margin-bottom:8px;
+        font-size:14px;
+        padding-bottom:2px;
+        }
+        .txta
+        {
+        min-height:90px;
+        }
+        .btns
+        {
+        text-align: center;
+        }
+
+
+    </style>
+    <div class="row py-4">
+        <div class="h2 text-center"><b>FEEDBACK <span class="text-warning">US <i class="fa fa-user-plus"></i></span></b>
+            <div class="line" style="margin-bottom: 7px;
+            margin-right: auto;
+            margin-left: auto;margin-top: 7px;
+            width:8%;
+            height:5px;
+            background:#ffc107;
+            border-radius:8px;">
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 signup bg-warning p-3 border">
+            <form method="post">
+                {% csrf_token %}
+
+                Name*<input type="text" name="name" required class="form-control" placeholder="Enter Your Name.."/>
+                Mobile*<input type="number" name="mobile" required class="form-control"
+                              placeholder="Enter Your Mobile.."/>
+                Email*<input type="email" name="email" required class="form-control"
+                             placeholder="Enter Your Email.."/>
+                Message*
+                <textarea class="form-control" name="msg" style="min-height:80px;resize:none;"
+                          placeholder="Enter Your Message.." required></textarea>
+                <input type="submit" value="Save" class="btn btn-info"/>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div> -->
+    {% endblock %}

@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+<style>
+.cont
+{
+min-height:520px;
+background:#f8f9fa;
+padding:5px;
+}
+.heading
+{
+box-sizing: border-box;
+
+margin:2px;
+border-radius:5px;
+background:#f8f9fa;
+}
+.massage
+{
+box-sizing: border-box;
+min-width:400px;
+border-radius:5px;
+margin:2px;
+background:#f8f9fa;
+padding:15px;
+}
+.address
+{
+box-sizing: border-box;
+min-width:400px;
+border-radius:5px;
+background:#f8f9fa;
+margin:2px;
+padding:15px;
+}
+.map
+{
+box-sizing: border-box;
+min-width:400px;
+min-height:450px;
+border-radius:5px;
+margin:2px;
+background:#f8f9fa;
+padding:15px;
+}
+.c3
+{
+margin:2px;
+padding:2px;
+background:#d5d5d5;
+border-radius:5px;
+
+}
+.form-control
+{
+margin-bottom:8px;
+padding-left:5px;
+}
+.strong
+{
+margin-bottom:10px;
+padding-left:20px;
+}
+.normal
+{
+padding-left:50px;
+margin-bottom:20px;
+}
+.mapsrc
+{
+border:2px solid #d5d5d5;
+}
+</style>
+<!--start-->
+<div class="row cont ">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 ">
+        <div class="row heading  text-center">
+            <h2>Contact <b class="text-warning">Us <i class="fa fa-phone"></i> </b></h2>
+            <div class=" text-center">
+        <div class="line" style="margin-bottom: 7px;
+        margin-right: auto; margin-left: auto;
+        width:15%; height:5px; background:#ffc107;
+        border-radius:8px;">
+        </div>
+    </div>
+            <h6>You may contact us by contact number or filling in this form any time <br/>
+                you need support or have any question.</h6>
+        </div>
+        <div class="row c3">
+            <div class="col massage" style="min-height:450px;">
+                <h3><u class="text-warning">Send Your</u> Message </h3>
+                <form method="post">
+                    {% csrf_token %}<!-- cross site reforgery-->
+                    {% if S %}
+                    <div class="alert alert-success">
+                        THANKS FOR ENQUIRY...
+                    </div>
+                    {% endif %}
+                    Name*<input type="text" name="name" required class="form-control" placeholder="Enter Your Name.."/>
+                    Mobile*<input type="number" name="mobile" required class="form-control"
+                                  placeholder="Enter Your Mobile.."/>
+                    Email*<input type="email" name="email" required class="form-control"
+                                 placeholder="Enter Your Email.."/>
+                    Message*
+                    <textarea class="form-control" name="msg" style="min-height:80px;resize:none;"
+                              placeholder="Enter Your Message.." required></textarea>
+                    <input type="submit" value="Save" class="btn btn-info"/>
+                </form>
+
+            </div>
+            <div class="col address">
+                <h3><u class="text-warning">Contact</u> Info</h3>
+                <div class="strong">
+                    <h4> Address</h4>
+                </div>
+                <div class="normal">
+                    <p1><i class="fa fa-home"></i>108,Chandra Niwas<br/>
+                        Vill:- Bistauli Bujurg<br/>
+                        Post:- Belipar<br/>
+                        Dist:- Gorakhpur
+                    </p1>
+                </div>
+                <div class="strong">
+                    <h4>Call Us</h4>
+                </div>
+                <div class="normal">
+                    <p>
+                        <a href="tel:+91 7007237006">+91 9651382969</a><br/>
+                        <a href="tel:+91 8052978684">+91 9305331866</a>
+                    </p>
+                </div>
+                <div class="strong">
+                    <i class="fa fa-envelope"></i>
+                    <strong>Mail Us</strong>
+                </div>
+                <div class="normal">
+                    <p>
+                        <a href="mailto:techpilelko@gmail.com">atmadevrt99@gmail.com</a>
+                        <br/>
+                        <a href="mailto:hr@techpile.in">atmdevrt99@gmail.com</a>
+                    </p>
+                </div>
+
+            </div>
+            <div class="col map ">
+                <h3><u class="text-warning">Map</u> Area</h3>
+                <div class="container-fluid newSection">
+                    <h4 class="sectionTitle">Find us on <span class="themeText">Google Map</span></h4>
+                    <p class="">
+                        View us on google map easily
+                    </p>
+                    <div class="col mapsrc">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3567.920437494696!2d83.41035541591279!3d26.586928283269106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39916978f000deb3%3A0xe4c88e9047e18bc!2sVaibhaw%20Printing%20Press!5e0!3m2!1sen!2sin!4v1632821772293!5m2!1sen!2sin"
+                                frameborder="0" height="300px" width="100%" style="border:0"
+                                allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <!--end-->
+    {% endblock %}

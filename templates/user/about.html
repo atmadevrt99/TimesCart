@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="row heading  text-center">
+            <h2>About <b class="text-warning">Us <i class="fa fa-phone"></i> </b></h2>
+            <div class=" text-center">
+                <div class="line" style="margin-bottom: 7px;
+        margin-right: auto; margin-left: auto;
+        width:15%; height:5px; background:#ffc107;
+        border-radius:8px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col border">
+        <h2 class="text-center">ISO Certified</h2>
+        <img src="{% static 'images/s1.jpeg' %}"style="height:100vh; width:100%">
+    </div>
+    <div class="col border">
+        <h2 class="text-center">Certificate Ministry of India</h2>
+        <img src="{% static 'images/s0.jpeg' %}"style="height:100vh; width:100%">
+    </div>
+</div>
+<!--end-->
+{% endblock %}

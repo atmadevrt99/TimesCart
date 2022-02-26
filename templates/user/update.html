@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+<div class="row">
+    <div class="row bg-#808080">
+        <div class="row py-4">
+            <div class="h2 text-center"><b>Update <span class="text-warning">Profile <i class="fa fa-user"></i></span></b>
+                <div class="line" style="margin-bottom: 7px;
+        margin-right: auto;
+        margin-left: auto;margin-top: 7px;
+        width:8%;
+        height:5px;
+        background:#ffc107;
+        border-radius:8px;">
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 signup bg-warning p-3 border">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}<!---cross site refered-->
+                    {% if S %}
+                    <div class="alert alert-success">
+                        Updated Successfully...
+                    </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Name*<input type="text" name="name" required class="form-control"
+                                        placeholder="Enter Your Name"/>
+                            Mobile No.*<input type="number" name="mobile" required class="form-control"
+                                              placeholder="Enter Mobile No."/>
+                            Email*<input type="email" name="email" required class="form-control"
+                                         placeholder="Enter Your Email"/>
+                            Possword*<input type="password" name="passwd" required class="form-control"
+                                            placeholder="Create Possword"/>
+                            Upload Photo*<br/><input type="file" id="myfile" name="myfile" class="form-control">
+                            Address*<textarea class="form-control txta" name="address" style="resize:none" required
+                                              placeholder="Enter your Address..."></textarea>
+                            <div class="btns text-center pt-3">
+                                <input type="submit" style="max-width:100px;text-align:center; " value="Update"
+                                       class="btn btn-primary form-control"/></div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+<!--end-->
+{% endblock %}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeCart</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'guestapp/css/style.css' %}">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'images/rolex.jpg' %}" rel="icon"/>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+
+    <style>
+
+        .t
+        {
+        min-height:30px;
+        text-align:center;
+        padding-top:3px;
+        background:#f7f7f7;
+        }
+        .ic
+        {
+        color:#7f7f7f;
+        border:1px solid #7f7f7f;
+        height:20px;
+        width:20px;
+        padding:1px;
+        border-radius:2px;
+        }
+        .ic:hover
+        {
+        color:#fecd18;
+        border:1px solid #fecd18;
+        transition:all ease 1s;
+        transform: rotate(360deg) scale(1.2);
+        }
+        .call
+        {
+        color:#0aa545;
+        border:1px solid #0aa545;
+        height:20px;
+        width:20px;
+        padding:1px;
+        border-radius:10px;
+        }
+        .call:hover
+        {
+        background:#0aa545;
+        color:white;
+
+        }
+        .headre1
+        {
+        min-height=50px;
+        }
+        .menu
+        {
+        min-height:40px;
+        background:#039be5;
+        }
+        #menu ul li a
+        {
+        color:white;
+        font-size:17px;
+        box-sizing: border-box;
+        }
+        #menu ul li a:hover
+        {
+        color:black;
+        border-radius:10px;
+        border:1px solid black;
+        box-sizing: border-box;
+
+        }
+        .newproduct
+        {
+        min-height:500px;
+
+        }
+        .services
+        {
+        min-height:200px;
+        }
+        .ufooter
+        {
+
+        background:#95d4ea;
+        }
+        .bfooter
+        {
+
+        margin-top:1px;
+        color:#eba300;
+        }
+        .scroll
+        {
+        color:#eba300;
+        text-align:center;
+        font-size:25px;
+        }
+        .tata
+        {
+        min-width:450px;
+        }
+        .citem
+        {
+        background:red;
+
+        border:3px solid #ff0000;
+        border-radius:10px;
+        max-width:10px;
+        min-width:10px;
+        }
+        .mail
+        {
+        color: #777;
+        }
+        .mail:hover
+        {
+        color: #fecd18;
+        }
+        #loader {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  z-index: 1;
+
+  width: 150px;
+
+  height: 150px;
+
+  margin: -75px 0 0 -75px;
+
+  border: 16px solid #f3f3f3;
+
+  border-radius: 50%;
+
+  border-top: 16px solid #3498db;
+
+  width: 120px;
+
+  height: 120px;
+
+  -webkit-animation: spin 2s linear infinite;
+
+  animation: spin 2s linear infinite;
+
+}
+
+
+
+@-webkit-keyframes spin {
+
+  0% { -webkit-transform: rotate(0deg); }
+
+  100% { -webkit-transform: rotate(360deg); }
+
+}
+
+
+
+@keyframes spin {
+
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+
+}
+
+
+
+/* Add animation to "page content" */
+
+.animate-bottom {
+
+  position: relative;
+
+  -webkit-animation-name: animatebottom;
+
+  -webkit-animation-duration: 1s;
+
+  animation-name: animatebottom;
+
+  animation-duration: 1s
+
+}
+
+
+
+@-webkit-keyframes animatebottom {
+
+  from { bottom:-100px; opacity:0 }
+
+  to { bottom:0px; opacity:1 }
+
+}
+
+
+
+@keyframes animatebottom {
+
+  from{ bottom:-100px; opacity:0 }
+
+  to{ bottom:0; opacity:1 }
+
+}
+
+
+
+#myDiv {
+
+  display: none;
+
+  text-align: center;
+
+}
+        
+
+
+    </style>
+</head>
+<body>
+<!--
+<body onload="myFunction()">
+
+<div id="loader"></div>
+
+
+<div style="display:none;" id="myDiv" class="animate-bottom">-->
+    <div class="container-fluid outer ">
+        <div class="row t text-#7f7f7f border-bottom ">
+            <div class="col-sm-4 border-end">
+                <i class="fa fa-phone call fa-spin"></i> Helpline No.: +91-9651382969 &nbsp|&nbsp +91-9305331866
+            </div>
+            <div class="col-sm-4 border-end ">
+                <a class="fa fa-envelope mail" href="mailto:timecart@gmail.com"> atmadevrt99@gmail.com</a>
+            </div>
+            <div class="col-sm-3">
+                <i class="fa fa-facebook ic" title="facebook"></i>
+                <i class="fa fa-youtube  ic " title="youtube"></i>
+                <i class="fa fa-instagram ic " title="instagram"></i>
+                <i class="fa fa-whatsapp ic " title="whatsaap"></i>
+            </div>
+            <div class="col-sm-1"><a class="fa fa-lock mail" href="/admin"> admin login</a></div>
+        </div>
+        <div class="row header1 ">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3 fs-3">
+                Time<b style="color:#0e71eb">Cart India<i class="fa fa-shopping-cart"></i></b>
+            </div>
+            <div class="col-sm-4 scroll">
+                <marquee behavior="scroll" direction="right-to-left">*****Welcome to Time<b>Cart</b><i
+                        class="fa fa-shopping-cart"></i> India Pvt. Ltd.*****
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <a style="color:#039be5">**** Thanks for visiting our website *****</a></marquee>
+            </div>
+            <div class="col-sm-4 text-center fs-4 p-1">
+                <a class="btn btn-outline-info" href="/user/feedback"><i class="fa fa-rss"></i> Feedback Us</a>
+
+                <!--<a href="/user/cart"><b class="btn btn-danger">
+                <i class="fa fa-shopping-cart"></i> {{noofitemsincart}}
+                </b></a>-->
+            </div>
+        </div>
+        <div class="row  menu" >
+            <div class="col-sm-2 p-1">
+                <img src="{% static 'images/cartlogo.jpeg' %}" style="max-height:50px; width:100%" class="d-block w-100"
+                     title="TimeCart India Pvt. Ltd." alt="TimeCart India Pvt. Ltd.">
+            </div>
+            <div class="col-sm-10 ps-5">
+                <!--start menu -->
+                <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDropdown"
+                                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/user/home"><i
+                                            class="fa fa-home"></i> Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/about"><i class="fa fa-info-circle"></i> About
+                                        Us</a>
+                                </li>
+                                <!--
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Products
+                                </a>
+                                <ul class="dropdown-menu bg-info" aria-labelledby="navbarDropdownMenuLink" >
+                                  <li><a class="dropdown-item" href="#">Men's</a></li>
+                                  <li><a class="dropdown-item" href="#">Women's</a></li>
+                                  <li><a class="dropdown-item" href="#">Kid's</a></li>
+                                </ul>
+                              </li>-->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/products/"><i class="fa fa-product-hunt"></i> Our
+                                        Product</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/myorders"><i class="fa fa-first-order"></i> My Order</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/contactus/"><i class="fa fa-phone"></i> Contact
+                                        Us</a>
+                                </li>
+                                {% if request.session.userid %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/myprofile"><i class="fa fa-user"></i> My Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/logout"><i class="fa fa-user-plus"></i> Logout</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">{{request.session.userid}}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/cart/"><i class="fa fa-shopping-cart"></i> Cart
+                                        <c class="citem ic text-white"> {{noofitemsincart}}</c>
+                                    </a>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/signin"><i class="fa fa-user-plus"></i> LogIn</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!--end menu -->
+            </div>
+
+        </div>
+
+        <!--upper base end-->
+
+        <div class=" row content" style="min-height:500px;">
+            <div class="col-sm-12 py-2">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <!--footer base start-->
+
+        <!--start services-->
+        <div class="row services  bg-dark text-warning pt-4">
+
+            <div class="row">
+                <div class="col tata text-center">
+                    <h6>Free Shipping</h6>
+                    <p class="text-muted margin-bottom-none">Free shipping across the country</p>
+                </div>
+
+                <div class="col tata text-center">
+                    <h6>Offer 20%</h6>
+                    <p class="text-muted margin-bottom-none">20% off on all orders</p>
+                </div>
+
+                <div class="col tata text-center ">
+                    <h6>Easy to Order</h6>
+                    <p class="text-muted margin-bottom-none">Experience Trust of Tata &amp; Expertise of Titan</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 text-center mb-30">
+                    <h6>Return within 30days</h6>
+                    <p class="text-muted margin-bottom-none">Easily return your product within 30days</p>
+                </div>
+                <div class="col-md-4 col-sm-6 text-center mb-30">
+                    <h6>100% ORIGINAL</h6>
+                    <p class="text-muted margin-bottom-none">guarantee for all products at TimeCart</p>
+                </div>
+                <div class="col-md-4 col-sm-6 text-center mb-30">
+                    <h6>Speedy Delivery</h6>
+                    <p class="text-muted margin-bottom-none">Dispatches in 4 working days</p>
+                </div>
+            </div>
+        </div>
+        <!--End services-->
+
+        <!--start Footer-->
+        <div class="row ufooter pt-2">
+            <div class="col-sm-4">
+                <h4>About Us</h4>
+                <p1>Our team started in the web hosting industry. After a few years,
+                    we discovered there were too many challenges to making a website.
+                    Traditional web hosting services were complicated and expensive to manage.
+                </p1>
+            </div>
+            <div class="col-sm-4">
+                <h4><u>Contact</u> Address</h4>
+                <p1><i class="fa fa-home"></i>108,Chandra Niwas<br/>
+                    vill:- Bistauli Bujurg<br/>
+                    post:- Belipar<br/>
+                    dist:- Gorakhpur
+                </p1>
+            </div>
+            <div class="col-sm-4 pb-2">
+                <h1>Time<b style="color:#0e71eb">Cart India<i class="fa fa-shopping-cart"></i></b></h1>
+                <p1>The world best watch shopping website</p1>
+                <i class="fa fa-facebook ic"></i>
+                <i class="fa fa-youtube  ic"></i>
+                <i class="fa fa-instagram ic"></i>
+                <i class="fa fa-whatsapp ic" title="9651382969"></i>
+                <img src="{% static 'images/cartlogo.jpeg' %}" style="max-height:100px;max-width:350px;" class="d-block w-100"
+                     alt="TimeCart India Pvt. Ltd.">
+            </div>
+        </div>
+        <div class=" row bfooter  bg-dark text-center py-2">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6"><a href="/user/contactus"><i class="fa fa-briefcase"></i> Sell On TimeCart</a>
+                    </div>
+                    <div class="col-sm-6">Develop By : @Atmadev Ram Tripathi &nbsp || &nbsp Techpile Technology</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                © Time<b style="color:#0e71eb">Cart India<i class="fa fa-shopping-cart"></i></b>
+            </div>
+        </div>
+        <!--End Footer-->
+    </div>
+
+    <!--<script>
+var myVar;
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+    </script>-->
+</body>
+</html>

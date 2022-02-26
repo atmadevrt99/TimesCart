@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+    .signin
+    {
+    min-height:200px;
+    font-size:14px;
+    padding-bottom:20px;
+    max-width:450px;
+    margin: auto;
+    }
+    .form-control
+    {
+    margin-bottom:8px;
+    font-size:14px;
+    }
+    .btns
+    {
+    text-align:center;
+    }
+</style>
+<div class="row py-4">
+    <div class="h2 text-center"><b>SIGN <span class="text-warning">IN <i class="fa fa-key fa-spin"></i></span></b>
+        <div class="line" style="margin-bottom: 7px;margin-top: 7px;
+        margin-right: auto;
+        margin-left: auto;
+        width:8%;
+        height:5px;
+        background:#ffc107;
+        border-radius:8px;">
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 signin bg-warning p-3 border">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}<!---cross site refered-->
+                    {% if S %}
+
+                    {% endif %}
+            <div class="row">
+                <div class="col-sm-12">
+
+                    Username*<input type="email" name="uname" required class="form-control"
+                                 placeholder="Enter Email Id"/>
+                    Possword*<input type="password" name="passwd" required class="form-control"
+                                    placeholder="Enter Possword"/>
+
+                    <div class="btns"><input type="submit" value="Login" style="max-width:100px;" class="btn btn-primary form-control"/></div>
+                </div>
+            </div>
+        </form>
+        <div class="text-center fs-6">not registered <a href="/user/signup"><b>Sign Up</b></a></div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <h2 class="text-center">Cart <b class="text-warning"> Items <i class="fa fa-shopping-cart"></i></b></h2>
+    <div class="col-sm-12">
+        <table class="table table-stripted">
+            <tr>
+            <th>Product Id</th>
+            <th>Picture</th>
+            <th>Product Name</th>
+            <th>Add Date</th>
+            <th>Description</th>
+            <th>Total Price</th>
+            <th>Discounted Price</th>
+            <th>Remove</th>
+            <th>Order</th>
+            </tr>
+            {%  if cart %}
+            {%  for x in cart %}
+            <tr>
+                <td>{{x.1}}</td>
+                <td><img src="/{{x.7}}" style="max-height:100px" class="card-img-top" alt=".."> </td>
+                <td>{{x.6}}</td>
+                <td>{{x.12}}</td>
+                <td>{{x.11}}</td>
+                <td>{{x.9}}</td>
+                <td>{{x.10}}</td>
+                <td><a href="/user/cart?pid={{x.0}}" class="btn btn-danger">Remove Item</a></td>
+                <td><a href="/user/process?pid={{x.1}}&bn=orderfromcart" class="btn btn-warning">Order Now</a></td>
+            </tr>
+            {%endfor%}
+            {%endif%}
+
+        </table>
+    </div>
+</div>
+
+{% endblock %}

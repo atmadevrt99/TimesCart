@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--start-->
+<div class="h2 text-center py-3">My <b class="text-warning"> Profile <i class="fa fa-user"></i> </b>
+<div class="line" style="margin-bottom: 7px;
+        margin-right: auto;
+        margin-left: auto;margin-top: 7px;
+        width:8%;
+        height:5px;
+        background:#ffc107;
+        border-radius:8px;">
+                </div></div>
+<div class="row">
+    {% if profile %}
+    {% for x in profile %}
+    <div class="student-profile py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent text-center">
+                            <img class="profile_img" src="/{{x.5}}" style="max-height:320px; max-width:100%;" alt="Profile Pic">
+                            <h3>{{x.0}}</h3>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <div class="row">
+                                <div class="col"><h3 class="mb-0"><i class="fa fa-clone pr-1"></i> General Information
+                                </h3></div>
+                                <div class="col text-center "><a class="btn btn-outline-info"
+                                                                           href="/user/update"><i class=""></i>
+                                    Update</a></div>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0">
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <th width="30%">Name</th>
+                                    <td width="2%">:</td>
+                                    <td>{{x.0}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Mobile</th>
+                                    <td width="2%">:</td>
+                                    <td>{{x.1}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Email ID</th>
+                                    <td width="2%">:</td>
+                                    <td>{{x.2}}</td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Password</th>
+                                    <td width="2%">:</td>
+                                    <td>{{x.3}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="height: 26px"></div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0"><i class="fa fa-home pr-1"></i> Address</h3>
+                        </div>
+                        <div class="card-body pt-0">
+                            <p>{{x.4}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    {%endif%}
+</div>
+
+<!--end-->
+{% endblock %}
